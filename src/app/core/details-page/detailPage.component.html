@@ -1,0 +1,49 @@
+
+<section class="detail-page">
+  <div class="back-button" [routerLink]="['/countries']">
+    <i class="fa-solid fa-arrow-left"></i>
+    <p>Back</p>
+  </div>
+  <article *ngIf="selectedCountry != undefined" class="details-container" >
+    <div class="details-flag" >
+      <img [src]="selectedCountry.flags.svg" alt="flag">
+    </div>
+    <div class="details" >
+      <h2>{{ selectedCountry.name }}</h2>
+      <div class="details-info">
+        <section class="p-1" >
+          <p><strong>Native Name:</strong> {{ selectedCountry.nativeName }}</p>
+          <p><strong>Population:</strong> {{ selectedCountry.population}}</p>
+          <p><strong>Region:</strong> {{ selectedCountry.region }}</p>
+          <p><strong>Sub Region:</strong> {{ selectedCountry.subregion }}</p>
+          <p><strong>Capital:</strong> {{ selectedCountry.capital }}</p>
+        </section>
+        <section class="p-2" >
+          <p><strong>Top Level Domain:</strong> {{ selectedCountry.topLevelDomain }}</p>
+          <!-- <p><strong>Currency:</strong> {{ country.currencies}}</p> -->
+          <p class="array-s" >
+            <strong>Currency:</strong>
+            <span *ngFor="let currency of selectedCountry.currencies" >{{currency.name}},</span>
+          </p>
+          <!-- <p><strong>Languages:</strong> {{ country.languages}}</p> -->
+          <p class="array-s" >
+            <strong>Languages:</strong>
+            <span *ngFor="let language of selectedCountry.languages" >{{language.name}},</span>
+          </p>
+        </section>
+      </div>
+      <div class="details-futter">
+        <strong>Border Countries:</strong>
+        <div  *ngIf="this.selectedCountry.borders == undefined " >
+          <span>There is not borders countries</span>
+        </div>
+        <div class="border-countries" *ngIf="this.selectedCountry.borders != undefined ">
+          <span class="border-country" *ngFor="let borderName of selectedCountryBorders" (click)="goToCountry(borderName)">
+            {{ borderName }}
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </article>
+</section>

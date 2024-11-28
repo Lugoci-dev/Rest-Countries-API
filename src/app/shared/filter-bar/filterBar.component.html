@@ -1,0 +1,11 @@
+
+<div class="filter-bar" (click)="toggleButton()" >
+  <p>{{renderedTag}}</p><i class="fa-solid fa-chevron-down"></i>
+  <div *ngIf="isDeployed" class="filter-bar-items" (pointerleave)="toggleButton()">
+    <div class="item" (click)="filterRegion('Africa')" ><p>Africa</p></div>
+    <div class="item" (click)="filterRegion('Americas')"><p>America</p></div>
+    <div class="item" (click)="filterRegion('Asia')"><p>Asia</p></div>
+    <div class="item" (click)="filterRegion('Europe')"><p>Europa</p></div>
+    <div class="item" (click)="filterRegion('Oceania')"><p>Oceania</p></div>
+  </div>
+</div>

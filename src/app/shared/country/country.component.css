@@ -1,0 +1,43 @@
+
+.country {
+  min-width: 250px;
+  max-width: 20vw;
+  font-size: .8rem;
+  height: 336px;
+  background-color: var(--dark-mode-elements);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all ease-in-out .5s;
+}
+
+.country img {
+  width: 100%;
+  height: 50%;
+  /* height: 100%; */
+}
+
+.country-info {
+  color: var(--dark-mode-text);
+  padding: 0 24px 24px 24px;
+  transition: all ease-in-out .5s;
+
+}
+
+.country-info p{
+  margin: 5px;
+  font-weight: 300;
+}
+
+.country-info span {
+  font-weight: 600;
+}
+
+@media(max-width: 700px){
+  .country {
+    width: 100%;
+    /* width: 700px; */
+    /* max-width: 80vw; */
+  }
+
+}

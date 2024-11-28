@@ -1,0 +1,16 @@
+<section class="country-page">
+  <div class="country-page-header">
+    <app-search-bar (searchEvent)="filterBySearch($event)"></app-search-bar>
+    <app-filter-bar (filtering)="filterByRegion($event)"></app-filter-bar>
+  </div>
+
+  <div class="countries-container">
+    <app-country
+      [country]="country"
+      *ngFor="let country of countriesRendered;
+      let i = index"
+      (click)="goToDetails(i)"
+    ></app-country>
+  </div>
+
+</section>
