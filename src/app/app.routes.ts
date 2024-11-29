@@ -2,7 +2,7 @@ import { provideRouter, Routes, withHashLocation } from '@angular/router';
 import { CountryPageComponent } from './core/countryPage.component';
 import { DetailPageComponent } from './core/details-page/detailPage.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     redirectTo: 'countries',
@@ -22,7 +22,3 @@ const routes: Routes = [
   }
 ];
 
-export const appRoutes = provideRouter(routes, withHashLocation());
-
-// Configuración del Base HREF
-export const APP_BASE_HREF = '/';
